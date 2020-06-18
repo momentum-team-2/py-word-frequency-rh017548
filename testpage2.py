@@ -14,7 +14,7 @@ for item in txt_files:
             poem_words[word] = 1 # if the word is not in the dictionary add it.
   
 for key in (poem_words.keys()): 
-    print(key, "|", poem_words[key], '*' * poem_words[key] ) 
+    print(key.rjust(20) , "|", poem_words[key], '*' * poem_words[key] ) 
 
 
 ########################## Remove Stop Words####################
