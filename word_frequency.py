@@ -7,7 +7,21 @@ STOP_WORDS = [
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
-    pass
+    txt_files = open(file) 
+    poem_words = {} # makes an empty dictionary
+    for item in txt_files: 
+        item = item.lower() # make all letters in file lowercase
+        item = item.strip() # takes out the leading spaces in the text
+        poem = item.split() # seperates the words by white spaces
+    
+        for word in poem: # loops over each word in the text
+            if word in poem_words: # This checks to see if the word is in the dictionary
+                poem_words[word] = poem_words[word] + 1 # If the word is in the dictionary increase the count by 1
+            else: 
+                poem_words[word] = 1 # if the word is not in the dictionary add it.
+  
+    for key in (poem_words.keys()): 
+        print(key, "|", poem_words[key], '*' * poem_words[key] ) 
 
 
 if __name__ == "__main__":
